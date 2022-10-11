@@ -54,4 +54,34 @@ Dokument je určen pro
 * Telefonní číslo: +420 603 738 538 
 * Github: https://github.com/TomasHanousek1 
 
+# Scénáře
+## 2.1 Všechny reálné způsoby použití
+Hlavní způsob využití této aplikace je rychlý přehled a zisk informací pro uživatele.
 
+## 2.2 Typy uživatelských rolí, „personas“
+* Uživatel - možnost zobrazit informace o tělesech, filtrování objektů
+
+## 2.3 Detaily, motivace, „živé“ příklady
+* Motivace - umožnit široké veřejnosti jednoduše a přehledně sledovat vesmírné objekty, které jsou v okolí Země
+* Příklad - Ve Zprávách jsem viděl, že se kolem naší Země ve vzdálenosti 123.000km proletí ateroid B-36. Otevřu aplikace, vyberu podle názvu nebo tělesa ve vzdálenosti menší než 200.000km od Země. Zakliknu těleso a vidím veškeré informace o tělesu.
+## 2.4 Vymezení rozsahu – co v sw NEbude
+### SW bude obsahovat
+* Zobrazení vesmírných těles v tabulce
+* Možnost filtrovat tělesa podle těchto parametrů: název objektu, vzdálenost od Země
+* Možnost vybrat určité vesmírné těleso a zobrazit bližší informace o tělesu
+
+### SW NEbude obsahovat
+* Možnost upravovat informace o tělesech
+* Možnost smazat těleso z databáze
+* Filtrování nebude obsahovat parametry, které nejsou zapsané v OBSAHU SW
+* Přihlašovací systém
+
+## 2.5 Na co se NEbude klást důraz (výkonnost)
+* Real-time aktualizace databáze
+
+# Celková hrubá architektura
+## 3.1 Pracovní tok
+## 3.2 Hlavní moduly
+## 3.3 Všechny detaily: obrazovky, okna, tisky, chybové zprávy, logování
+## 3.4 Všechny možné toky programu a jejich projevy
+## 3.5 Všechny dohodnuté principy
