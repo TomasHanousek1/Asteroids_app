@@ -25,9 +25,8 @@ Autoři: Tomáš Hanousek
 * Celková hrubá architektura
   * 3.1 Pracovní tok
   * 3.2 Hlavní moduly
-  * 3.3 Všechny detaily: obrazovky, okna, tisky, chybové zprávy, logování
+  * 3.3 Všechny detaily: obrazovky, okna, tisky, chybové zprávy
   * 3.4 Všechny možné toky programu a jejich projevy
-  * 3.5 Všechny dohodnuté principy
 * Otevřené otázky 
   * 4.1 Poznámky pro realizaci
 
@@ -81,7 +80,31 @@ Hlavní způsob využití této aplikace je rychlý přehled a zisk informací p
 
 # Celková hrubá architektura
 ## 3.1 Pracovní tok
+Po spuštění aplikace se uživateli zobrazí hlavní stránka s vyhledávacím filtrem. Aplikace mezitím pošle API request na server NASA API, který pošle API respond s tázanou JSON databází. V průběhu, co uživatel bude vybírat parametry, tak se JSON objekt deserealizuje do Objektu typu list. Uživatel, po vybrání jeho zvolených parametrů, stiskne tlačítko "vyhledat". Aplikace projede celý list a vybere 20 objektů, které nejvíce odpovídají zadaným parametrům. Ty následně zobrazí na hlavní stránce. Vzhledávací bar se částečne sbalí a uživatel ho bude moci případně znovu rozkliknout.
 ## 3.2 Hlavní moduly
-## 3.3 Všechny detaily: obrazovky, okna, tisky, chybové zprávy, logování
+* API komunikace - poslaní API Request na NASA API, přijmutí API Respond s JSON objektem
+* Deserealizace - převedení Json objektu do pracovní roviny aplikace (LIST)
+* Vyhledávání - zadání parametrů a následný výběr objektů podle parametrů z LISTU
+* Vizualizace - převedení informaci z LISTU do UI komponentů
+
+Schématický obrázek MODEL 1: https://www.figma.com/file/apsBl1foPj7jbOGD07BnLZ/FS_Asteroids?node-id=0%3A1
+
+## 3.3 Všechny detaily: obrazovky, okna, tisky, chybové zprávy
+Obrazovky
+* MainPage - Hlavní stránka, která obsahuje vyhledávání a seznam odpovídajících objektů
+* ObjectPage - Stránka daného objektu s informacemi o něm
+Schématický obrázek MODEL 2: https://www.figma.com/file/apsBl1foPj7jbOGD07BnLZ/FS_Asteroids?node-id=0%3A1
+
+Chybové zprávy
+* PopUp error
+ * ConnectionException -> Chyba v komunikaci NASA API <-> Aplikace
+ * NullObjectException -> Při rozkliknutí objektu nelze načíst jeho parametry do UI.
+ * NullListException -> Prázdný LIST, do kterého se zapisují data po deserializaci.
+
+* PopUp warning
+ * Objekt nenalezen -> Žádný objekt neodpovídá hledaným parametrům
+
 ## 3.4 Všechny možné toky programu a jejich projevy
-## 3.5 Všechny dohodnuté principy
+Po spuštění aplikace se dostane uživatel na hlavní panel a automaticky se pošle request na NASA API.
+* Tok 1 -> NASA API pošle API Respond a aplikace zpracuje získaná data, se kterými může dále pracovat.
+* Tok 2(Error) -> Aplikace nedostane API Respond, pokusí se o něj znovu. V případě 3. selhaní vyskočí chyba: ConnectionException. Uživatel se může pokusit opakovaně navázat spojení pomocí tlačítka "vyhledat"
