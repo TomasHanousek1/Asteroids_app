@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:Asteroids_app"
+             mc:Ignorable="d"
+             x:Class="Asteroids_app.ShellPage">
+    <Shell.FlyoutHeader>
+        <Frame>
+            <Label Text="SSPŠ" />
+        </Frame>
+        </Shell.FlyoutHeader>
+        <FlyoutItem Title="AsteroidAPP" FlyoutDisplayOptions="AsMultipleItems">
+
+            <ShellContent Title = "Tělesa" Icon="planeta.png">
+                <views:WikiPage/>
+            </ShellContent>
+
+        </FlyoutItem>
+</Shell>

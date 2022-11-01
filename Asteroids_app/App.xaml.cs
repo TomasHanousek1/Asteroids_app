@@ -10,7 +10,7 @@ namespace Asteroids_app
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ShellPage();
         }
 
         protected override void OnStart()
