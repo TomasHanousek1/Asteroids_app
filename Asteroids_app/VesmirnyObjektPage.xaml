@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" BackgroundColor="AliceBlue">
             <Frame BackgroundColor="Gray" Padding="24" CornerRadius="0">
-                <Label Text="{Binding Nazev}" TextColor="White" VerticalOptions="Center" FontSize="28" HorizontalOptions="Center"/>
+                <Label Text="{Binding Name}" TextColor="White" VerticalOptions="Center" FontSize="28" HorizontalOptions="Center"/>
             </Frame>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -19,16 +19,13 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Column="1" Grid.Row="0" Text="{Binding Id}"  VerticalOptions="Center" FontSize="20" HorizontalOptions="End"/>
                 <Label Grid.Column="0" Grid.Row="0" Text="ID" VerticalOptions="Center" FontSize="20" HorizontalOptions="Center"/>
-                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Name}"  VerticalOptions="Center" FontSize="20" HorizontalOptions="End"/>
-                <Label Grid.Column="0" Grid.Row="1" Text="Název" VerticalOptions="Center" FontSize="20" HorizontalOptions="Center"/>
-                <Label Grid.Column="1" Grid.Row="2" Text="{Binding Is_potentially_hazardous_asteroid}"  VerticalOptions="Center" FontSize="20" HorizontalOptions="End"/>
-                <Label Grid.Column="0" Grid.Row="2" Text="Je nebezpečný?" VerticalOptions="Center" FontSize="20" HorizontalOptions="Center"/>
-                <Label Grid.Column="1" Grid.Row="3" Text="{Binding Absolute_magnitude_h}"  VerticalOptions="Center" FontSize="20" HorizontalOptions="End"/>
-                <Label Grid.Column="0" Grid.Row="3" Text="Jasnost" VerticalOptions="Center" FontSize="20" HorizontalOptions="Center"/>
+                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Is_potentially_hazardous_asteroid}"  VerticalOptions="Center" FontSize="20" HorizontalOptions="End"/>
+                <Label Grid.Column="0" Grid.Row="1" Text="Je nebezpečný?" VerticalOptions="Center" FontSize="20" HorizontalOptions="Center"/>
+                <Label Grid.Column="1" Grid.Row="2" Text="{Binding Absolute_magnitude_h}"  VerticalOptions="Center" FontSize="20" HorizontalOptions="End"/>
+                <Label Grid.Column="0" Grid.Row="2" Text="Jasnost" VerticalOptions="Center" FontSize="20" HorizontalOptions="Center"/>
 
             </Grid>
             
